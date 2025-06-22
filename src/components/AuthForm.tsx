@@ -15,6 +15,7 @@ interface AuthFormProps {
 
 const AuthForm = ({ role, onBack, onLogin }: AuthFormProps) => {
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     rollNumber: '',
     facultyId: '',
@@ -79,6 +80,22 @@ const AuthForm = ({ role, onBack, onLogin }: AuthFormProps) => {
           </CardHeader>
           <CardContent className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Name field for faculty and admin */}
+              {role !== 'student' && (
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-white">Full Name</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Enter your full name"
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                    required
+                  />
+                </div>
+              )}
+
               {role === 'student' ? (
                 <>
                   <div className="space-y-2">

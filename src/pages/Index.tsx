@@ -4,6 +4,8 @@ import LandingPage from '@/components/LandingPage';
 import AuthForm from '@/components/AuthForm';
 import Header from '@/components/Header';
 import StudentDashboard from '@/components/StudentDashboard';
+import FacultyDashboard from '@/components/FacultyDashboard';
+import AdminDashboard from '@/components/AdminDashboard';
 import Leaderboard from '@/components/Leaderboard';
 import Announcements from '@/components/Announcements';
 import ContactSupport from '@/components/ContactSupport';
@@ -45,6 +47,9 @@ const Index = () => {
   const renderMainContent = () => {
     switch (activeView) {
       case 'dashboard':
+        if (userRole === 'student') return <StudentDashboard />;
+        if (userRole === 'faculty') return <FacultyDashboard />;
+        if (userRole === 'admin') return <AdminDashboard />;
         return <StudentDashboard />;
       case 'leaderboard':
         return <Leaderboard />;
@@ -55,6 +60,9 @@ const Index = () => {
       case 'admin':
         return <AdminPanel />;
       default:
+        if (userRole === 'student') return <StudentDashboard />;
+        if (userRole === 'faculty') return <FacultyDashboard />;
+        if (userRole === 'admin') return <AdminDashboard />;
         return <StudentDashboard />;
     }
   };
