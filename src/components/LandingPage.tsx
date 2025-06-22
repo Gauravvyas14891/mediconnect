@@ -38,9 +38,11 @@ const LandingPage = ({ onRoleSelect }: LandingPageProps) => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">M</span>
-            </div>
+            <img 
+              src="/lovable-uploads/e1436559-7a6d-412c-a6cb-801545b89077.png" 
+              alt="Medicaps University Logo" 
+              className="w-16 h-16 object-contain"
+            />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
             MediConnect

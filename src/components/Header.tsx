@@ -28,9 +28,11 @@ const Header = ({ currentView, onViewChange, isAuthenticated, userRole, onLogout
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">M</span>
-            </div>
+            <img 
+              src="/lovable-uploads/e1436559-7a6d-412c-a6cb-801545b89077.png" 
+              alt="Medicaps University Logo" 
+              className="w-8 h-8 object-contain"
+            />
             <h1 className="text-xl font-bold bg-gradient-to-r from-primary-500 to-teal-500 bg-clip-text text-transparent">
               MediConnect
             </h1>
